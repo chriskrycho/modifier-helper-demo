@@ -1,0 +1,30 @@
+<h2>Code:</h2>
+
+<pre><code>
+&lt;div &#123;&#123;(if this.enabled (modifier 'demo' extra='With some extra text...'))&#125;&#125;&gt;
+  This is the body! Click it when the  and you'll see an alert with this same text.
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;
+    State: &#123;&#123;if this.enabled 'on' 'off'&#125;&#125;&gt;
+    &lt;button type='button' &#123;&#123;on 'click' this.flipIt&#125;&#125;&gt;&gt;
+      Turn it &#123;&#123;if this.enabled 'off' 'on'&#125;&#125;&gt;
+    &lt;/button&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>Result:</h2>
+
+<div {{(if this.enabled (modifier 'demo' extra='With some extra text...'))}}>
+  This is the body! Click it when the  and you'll see an alert with this same text.
+</div>
+
+<div>
+  <p>
+    State: {{if this.enabled 'on' 'off'}}
+    <button type='button' {{on 'click' this.flipIt}}>
+      Turn it {{if this.enabled 'off' 'on'}}
+    </button>
+  </p>
+</div>
